@@ -9,11 +9,7 @@
   --bs-red: #ef4444;
   --bs-orange: #ef4444;
   --bs-yellow: #eab308;
-<<<<<<< HEAD
-  --bs-green: #22c55e;
-=======
   --bs-green: #A3DC9A;
->>>>>>> 89fe746 (50%)
   --bs-teal: #14b8a6;
   --bs-cyan: #06b6d4;
   --bs-white: #fff;
@@ -30,11 +26,7 @@
   --bs-gray-900: #18181b;
   --bs-primary: #ef4444;
   --bs-secondary: #71717a;
-<<<<<<< HEAD
-  --bs-success: #22c55e;
-=======
   --bs-success: #A3DC9A;
->>>>>>> 89fe746 (50%)
   --bs-info: #0ea5e9;
   --bs-warning: #eab308;
   --bs-danger: #ef4444;
@@ -3898,13 +3890,8 @@ fieldset:disabled .btn {
 
 .btn-success {
   --bs-btn-color: #000;
-<<<<<<< HEAD
-  --bs-btn-bg: #22c55e;
-  --bs-btn-border-color: #22c55e;
-=======
   --bs-btn-bg: #A3DC9A;
   --bs-btn-border-color: #A3DC9A;
->>>>>>> 89fe746 (50%)
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: rgb(67.15, 205.7, 118.15);
   --bs-btn-hover-border-color: rgb(56.1, 202.8, 110.1);
@@ -3914,13 +3901,8 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: rgb(56.1, 202.8, 110.1);
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-<<<<<<< HEAD
-  --bs-btn-disabled-bg: #22c55e;
-  --bs-btn-disabled-border-color: #22c55e;
-=======
   --bs-btn-disabled-bg: #A3DC9A;
   --bs-btn-disabled-border-color: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .btn-info {
@@ -4060,21 +4042,6 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-success {
-<<<<<<< HEAD
-  --bs-btn-color: #22c55e;
-  --bs-btn-border-color: #22c55e;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #22c55e;
-  --bs-btn-hover-border-color: #22c55e;
-  --bs-btn-focus-shadow-rgb: 34, 197, 94;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #22c55e;
-  --bs-btn-active-border-color: #22c55e;
-  --bs-btn-active-shadow: none;
-  --bs-btn-disabled-color: #22c55e;
-  --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #22c55e;
-=======
   --bs-btn-color: #A3DC9A;
   --bs-btn-border-color: #A3DC9A;
   --bs-btn-hover-color: #000;
@@ -4088,7 +4055,6 @@ fieldset:disabled .btn {
   --bs-btn-disabled-color: #A3DC9A;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #A3DC9A;
->>>>>>> 89fe746 (50%)
   --bs-gradient: none;
 }
 
@@ -9116,11 +9082,7 @@ fieldset:disabled .btn {
 }
 
 .border-success {
-<<<<<<< HEAD
-  border-color: #22c55e !important;
-=======
   border-color: #A3DC9A !important;
->>>>>>> 89fe746 (50%)
 }
 
 .border-info {
@@ -11065,11 +11027,7 @@ fieldset:disabled .btn {
 }
 
 .text-success {
-<<<<<<< HEAD
-  color: #22c55e !important;
-=======
   color: #A3DC9A !important;
->>>>>>> 89fe746 (50%)
 }
 
 .text-info {
@@ -11335,11 +11293,7 @@ fieldset:disabled .btn {
 }
 
 .bg-success {
-<<<<<<< HEAD
-  background-color: #22c55e !important;
-=======
   background-color: #A3DC9A !important;
->>>>>>> 89fe746 (50%)
 }
 
 .bg-info {
@@ -21513,11 +21467,7 @@ fieldset:disabled .btn {
 }
 
 .alert-success {
-<<<<<<< HEAD
-  background-image: linear-gradient(310deg, #22c55e 0%, rgb(132.1624454148, 220.2707423581, 19.9292576419) 100%);
-=======
   background-image: linear-gradient(310deg, #A3DC9A 0%, rgb(132.1624454148, 220.2707423581, 19.9292576419) 100%);
->>>>>>> 89fe746 (50%)
 }
 
 .alert-info {
@@ -21652,11 +21602,7 @@ fieldset:disabled .btn {
 }
 
 .badge.bg-success {
-<<<<<<< HEAD
-  background: #22c55e;
-=======
   background: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .badge.bg-info {
@@ -21874,22 +21820,13 @@ fieldset:disabled .btn {
 
 .btn-success:hover,
 .btn.bg-gradient-success:hover {
-<<<<<<< HEAD
-  background-color: #22c55e;
-  border-color: #22c55e;
-=======
   background-color: #A3DC9A;
   border-color: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .btn-success .btn.bg-outline-success,
 .btn.bg-gradient-success .btn.bg-outline-success {
-<<<<<<< HEAD
-  border: 1px solid #22c55e;
-=======
   border: 1px solid #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .btn-success:not(:disabled):not(.disabled).active,
@@ -21898,13 +21835,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-success:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-success:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-success.dropdown-toggle {
-<<<<<<< HEAD
-  color: color-yiq(#22c55e);
-  background-color: #22c55e;
-=======
   color: color-yiq(#A3DC9A);
   background-color: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .btn-success.focus,
@@ -21922,11 +21854,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: 0.75;
   box-shadow: none;
-<<<<<<< HEAD
-  color: #22c55e;
-=======
   color: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .btn-info:hover,
@@ -22389,11 +22317,7 @@ fieldset:disabled .btn {
 }
 
 .card.card-background.card-background-mask-success:after {
-<<<<<<< HEAD
-  background-image: linear-gradient(310deg, #22c55e 0%, #98ec2d 100%);
-=======
   background-image: linear-gradient(310deg, #A3DC9A 0%, #98ec2d 100%);
->>>>>>> 89fe746 (50%)
   opacity: 0.85;
 }
 
@@ -23102,11 +23026,7 @@ label,
 }
 
 .bg-gradient-success {
-<<<<<<< HEAD
-  background-image: linear-gradient(310deg, #22c55e 0%, #98ec2d 100%);
-=======
   background-image: linear-gradient(310deg, #A3DC9A 0%, #98ec2d 100%);
->>>>>>> 89fe746 (50%)
 }
 
 .bg-gradient-info {
@@ -23174,11 +23094,7 @@ label,
 }
 
 .bg-gradient-faded-success-vertical {
-<<<<<<< HEAD
-  background-image: radial-gradient(200px circle at 50% 70%, rgba(34, 197, 94, 0.3) 0, #22c55e 100%);
-=======
   background-image: radial-gradient(200px circle at 50% 70%, rgba(34, 197, 94, 0.3) 0, #A3DC9A 100%);
->>>>>>> 89fe746 (50%)
 }
 
 .bg-gradient-faded-info-vertical {
@@ -23368,11 +23284,7 @@ svg.text-danger .color-background {
 }
 
 svg.text-success .color-foreground {
-<<<<<<< HEAD
-  fill: #22c55e;
-=======
   fill: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 svg.text-success .color-background {
@@ -23958,11 +23870,7 @@ html {
   bottom: 0;
   width: 100%;
   max-width: 15.625rem !important;
-<<<<<<< HEAD
-  overflow-y: auto;
-=======
   overflow-y: visible;
->>>>>>> 89fe746 (50%)
   padding: 0;
   box-shadow: none;
 }
@@ -24566,11 +24474,7 @@ html {
 }
 
 .sidenav[data-color=success] .navbar-nav>.nav-item>.nav-link.active .icon {
-<<<<<<< HEAD
-  background-image: linear-gradient(310deg, #22c55e 0%, #22c55e 100%);
-=======
   background-image: linear-gradient(310deg, #A3DC9A 0%, #A3DC9A 100%);
->>>>>>> 89fe746 (50%)
 }
 
 .sidenav[data-color=info] .navbar-nav>.nav-item>.nav-link.active .icon {
@@ -24707,13 +24611,8 @@ html {
 }
 
 .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
-<<<<<<< HEAD
-  background-image: linear-gradient(to bottom right, rgba(46, 47, 239, 0.85), rgba(146, 63, 255, 0.85));
-  color: #fff;
-=======
   background-color: #A3DC9A;
   color: #000;
->>>>>>> 89fe746 (50%)
 }
 
 .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon svg .color-background,
@@ -25068,13 +24967,8 @@ html {
 }
 
 .nav.nav-pills.nav-pills-success .moving-tab .nav-link.active {
-<<<<<<< HEAD
-  background: #22c55e;
-  color: #22c55e;
-=======
   background: #A3DC9A;
   color: #A3DC9A;
->>>>>>> 89fe746 (50%)
 }
 
 .nav.nav-pills.nav-pills-warning {
@@ -25196,11 +25090,7 @@ html {
 .pagination.pagination-success .page-item.active>.page-link,
 .pagination.pagination-success .page-item.active>.page-link:focus,
 .pagination.pagination-success .page-item.active>.page-link:hover {
-<<<<<<< HEAD
-  background-image: linear-gradient(310deg, #22c55e 0%, #98ec2d 100%);
-=======
   background-image: linear-gradient(310deg, #A3DC9A 0%, #98ec2d 100%);
->>>>>>> 89fe746 (50%)
   border: none;
   color: #fff;
 }

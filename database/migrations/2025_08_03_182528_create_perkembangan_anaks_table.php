@@ -15,11 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('tahun_ajaran_id');
             $table->foreign('tahun_ajaran_id')->references('id')->on('tahun_ajarans')->onDelete('cascade');
-<<<<<<< HEAD
-=======
             $table->unsignedBigInteger('kelas_id');
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
->>>>>>> 89fe746 (50%)
             $table->unsignedBigInteger('anak_id');
             $table->foreign('anak_id')->references('id')->on('anaks')->onDelete('cascade');
             $table->unsignedBigInteger('semester_id');
@@ -29,11 +26,8 @@ return new class extends Migration
             $table->float('motorik');
             $table->float('bahasa');
             $table->float('sosial_emosional');
-<<<<<<< HEAD
-=======
             $table->float('ratarata')->nullable();
             $table->string('ket')->nullable();
->>>>>>> 89fe746 (50%)
             $table->timestamps();
         });
     }

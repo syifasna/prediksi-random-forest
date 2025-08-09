@@ -2,13 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use Illuminate\Http\Request;
-
-class PerkembanganAnakController extends Controller
-{
-    //
-=======
 use App\Models\PerkembanganAnak;
 use App\Models\TahunAjaran;
 use App\Models\Semester;
@@ -124,5 +117,4 @@ class PerkembanganAnakController extends Controller
     {
         return Anak::where('kelas_id', $kelasId)->get();
     }
->>>>>>> 89fe746 (50%)
 }

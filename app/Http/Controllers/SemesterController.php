@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Semester;
-<<<<<<< HEAD
-=======
 use App\Models\TahunAjaran;
->>>>>>> 89fe746 (50%)
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -19,11 +16,7 @@ class SemesterController extends Controller
      */
     public function index(): View
     {
-<<<<<<< HEAD
-        $semester = Semester::paginate(5);
-=======
         $semester = Semester::with('TahunAjaran')->paginate(5);
->>>>>>> 89fe746 (50%)
           
         return view('admin.semester.index', compact('semester'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -34,12 +27,8 @@ class SemesterController extends Controller
      */
     public function create(): View
     {
-<<<<<<< HEAD
-        return view('admin.semester.create');
-=======
         $tahun_ajaran = TahunAjaran::all();
         return view('admin.semester.create', compact('tahun_ajaran'));
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -66,12 +55,8 @@ class SemesterController extends Controller
      */
     public function edit(Semester $semester): View
     {
-<<<<<<< HEAD
-        return view('admin.semester.edit', compact('semester'));
-=======
         $tahun_ajaran = TahunAjaran::all();
         return view('admin.semester.edit', compact('semester', 'tahun_ajaran'));
->>>>>>> 89fe746 (50%)
     }
 
     /**

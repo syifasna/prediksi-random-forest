@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TahunAjaran extends Model
 {
-<<<<<<< HEAD
-    protected $guarded = 'id';
-=======
     protected $guarded = ['id'];
->>>>>>> 89fe746 (50%)
 
     public function semester(): HasMany
     {

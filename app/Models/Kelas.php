@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kelas extends Model
 {
-<<<<<<< HEAD
-    protected $guarded = 'id';
-=======
     protected $guarded = ['id'];
->>>>>>> 89fe746 (50%)
 
     public function TahunAjaran(): BelongsTo
     {
@@ -28,12 +24,9 @@ class Kelas extends Model
     {
         return $this->hasMany(Anak::class, 'kelas_id', 'id');
     }
-<<<<<<< HEAD
-=======
 
      public function PerkembanganAnak(): HasMany
     {
         return $this->hasMany(PerkembanganAnak::class, 'kelas_id', 'id');
     }
->>>>>>> 89fe746 (50%)
 }

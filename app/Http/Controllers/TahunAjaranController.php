@@ -16,15 +16,9 @@ class TahunAjaranController extends Controller
     public function index(): View
     {
         $tahunAjaran = TahunAjaran::paginate(5);
-<<<<<<< HEAD
-          
-        return view('admin.tahun-ajaran.index', compact('tahunAjaran'))
-                    ->with('i', (request()->input('page', 1) - 1) * 5);
-=======
 
         return view('admin.tahun-ajaran.index', compact('tahunAjaran'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -40,14 +34,6 @@ class TahunAjaranController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-<<<<<<< HEAD
-        TahunAjaran::create($request->all());
-           
-        return redirect()->route('tahun-ajaran.index')
-                         ->with('success', 'Data Tahun Ajaran Berhasil Ditambahkan.');
-    }
-
-=======
         $data = $request->validate([
             'tahun_awal' => ['required', 'integer', 'min:2000'],
             'tahun_akhir' => ['required', 'integer', 'gt:tahun_awal'],
@@ -60,7 +46,6 @@ class TahunAjaranController extends Controller
         return redirect()->route('tahun-ajaran.index')
             ->with('success', 'Data Tahun Ajaran Berhasil Ditambahkan.');
     }
->>>>>>> 89fe746 (50%)
     /**
      * Display the specified resource.
      */
@@ -83,15 +68,9 @@ class TahunAjaranController extends Controller
     public function update(Request $request, TahunAjaran $tahunAjaran): RedirectResponse
     {
         $tahunAjaran->update($request->all());
-<<<<<<< HEAD
-          
-        return redirect()->route('tahun-ajaran.index')
-                        ->with('success','Data Tahun Ajaran Berhasil Diubah');
-=======
 
         return redirect()->route('tahun-ajaran.index')
             ->with('success', 'Data Tahun Ajaran Berhasil Diubah');
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -100,14 +79,8 @@ class TahunAjaranController extends Controller
     public function destroy(TahunAjaran $tahunAjaran): RedirectResponse
     {
         $tahunAjaran->delete();
-<<<<<<< HEAD
-           
-        return redirect()->route('tahun-ajaran.index')
-                        ->with('success','Data Tahun Ajaran Berhasil Dihapus');
-=======
 
         return redirect()->route('tahun-ajaran.index')
             ->with('success', 'Data Tahun Ajaran Berhasil Dihapus');
->>>>>>> 89fe746 (50%)
     }
 }

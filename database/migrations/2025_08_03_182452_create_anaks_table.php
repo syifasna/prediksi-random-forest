@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nik');
             $table->enum('jk', ['P','L']);
-<<<<<<< HEAD
-=======
             $table->date('tglLahir');
->>>>>>> 89fe746 (50%)
             $table->string('namaOrtuWali');
             $table->string('foto')->nullable();
             $table->unsignedBigInteger('kelas_id');

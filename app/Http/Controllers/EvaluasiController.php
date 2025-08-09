@@ -2,13 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use Illuminate\Http\Request;
-
-class EvaluasiController extends Controller
-{
-    //
-=======
 use App\Models\PerkembanganAnak;
 use App\Models\Evaluasi;
 use Illuminate\Http\Request;
@@ -51,5 +44,4 @@ class EvaluasiController extends Controller
 
         return redirect()->route('evaluasi.index')->with('success', 'Prediksi berhasil dilakukan.');
     }
->>>>>>> 89fe746 (50%)
 }

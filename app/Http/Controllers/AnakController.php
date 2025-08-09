@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anak;
-<<<<<<< HEAD
-=======
 use App\Models\Kelas;
->>>>>>> 89fe746 (50%)
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -19,11 +16,7 @@ class AnakController extends Controller
      */
     public function index(): View
     {
-<<<<<<< HEAD
-        $anak = Anak::paginate(5);
-=======
         $anak = Anak::latest()->paginate(5);
->>>>>>> 89fe746 (50%)
           
         return view('admin.anak.index', compact('anak'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -34,12 +27,8 @@ class AnakController extends Controller
      */
     public function create(): View
     {
-<<<<<<< HEAD
-        return view('admin.anak.create');
-=======
         $kelas = Kelas::all();
         return view('admin.anak.create', compact('kelas'));
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -47,12 +36,6 @@ class AnakController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-<<<<<<< HEAD
-        Anak::create($request->all());
-           
-        return redirect()->route('anak.index')
-                         ->with('success', 'Data Anak Berhasil Ditambahkan.');
-=======
         $request->validate([
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -70,7 +53,6 @@ class AnakController extends Controller
 
         return redirect()->route('anak.index')
             ->with('success','Data Anak Berhasil Ditambah.');
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -86,12 +68,8 @@ class AnakController extends Controller
      */
     public function edit(Anak $anak): View
     {
-<<<<<<< HEAD
-        return view('admin.anak.edit', compact('anak'));
-=======
         $kelas = Kelas::all();
         return view('admin.anak.edit', compact('anak', 'kelas'));
->>>>>>> 89fe746 (50%)
     }
 
     /**
@@ -99,9 +77,6 @@ class AnakController extends Controller
      */
     public function update(Request $request, Anak $anak): RedirectResponse
     {
-<<<<<<< HEAD
-        $anak->update($request->all());
-=======
         $request->validate([
             'foto'    => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
@@ -120,7 +95,6 @@ class AnakController extends Controller
         }
 
         $anak->update($input);
->>>>>>> 89fe746 (50%)
           
         return redirect()->route('anak.index')
                         ->with('success','Data Anak Berhasil Diubah');

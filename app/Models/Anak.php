@@ -8,11 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Anak extends Model
 {
-<<<<<<< HEAD
-    protected $guarded = 'id';
-=======
     protected $guarded = ['id'];
->>>>>>> 89fe746 (50%)
 
     public function kelas(): BelongsTo
     {
