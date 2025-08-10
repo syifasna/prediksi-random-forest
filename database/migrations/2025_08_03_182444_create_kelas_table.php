@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('tahun_ajaran_id')->references('id')->on('tahun_ajarans')->onDelete('cascade');
             $table->unsignedBigInteger('wali_kelas_id');
             $table->foreign('wali_kelas_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('ket');
             $table->timestamps();
         });
     }

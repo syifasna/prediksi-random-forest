@@ -40,8 +40,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/evaluasi', [EvaluasiController::class, 'index'])->name('evaluasi.index');
     Route::post('/evaluasi/prediksi', [EvaluasiController::class, 'prediksiSemua'])->name('evaluasi.prediksi');
-
-
+    Route::get('/evaluasi/download-excel', [EvaluasiController::class, 'downloadExcelGrouped'])->name('evaluasi.download.excel');
+    Route::get('/evaluasi/download-pdf', [EvaluasiController::class, 'downloadPDFGrouped'])->name('evaluasi.download.pdf');
 });
 
 Route::middleware(['auth', 'user-access:kepsek'])->group(function () {

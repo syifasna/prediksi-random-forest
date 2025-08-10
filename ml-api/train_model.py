@@ -1,29 +1,29 @@
-# train_model.py
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 
 data = {
-    'kognitif': [0.80, 0.60, 0.45, 0.75, 0.50],
-    'motorik': [0.90, 0.70, 0.50, 0.80, 0.55],
-    'bahasa': [0.75, 0.65, 0.40, 0.70, 0.50],
-    'sosial_emosional': [0.85, 0.60, 0.50, 0.78, 0.52],
-    'label': ['Sesuai Usia', 'Perlu Pendampingan', 'Di Bawah Usia', 'Sesuai Usia', 'Di Bawah Usia']
+    'kognitif': [0.95, 0.75, 0.50, 0.85, 0.60],
+    'motorik': [0.96, 0.78, 0.45, 0.88, 0.55],
+    'bahasa': [0.94, 0.77, 0.48, 0.80, 0.52],
+    'sosial_emosional': [0.95, 0.79, 0.42, 0.82, 0.50],
+    'label': [
+        'Sangat Baik',        # capaian tertinggi, indikator ✔ banyak
+        'Sesuai Usia',        # capaian cukup baik, ada variasi
+        'Perlu Pendampingan', # capaian rendah, banyak kosong
+        'Sesuai Usia',
+        'Perlu Pendampingan'
+    ]
 }
 
-# Konversi ke DataFrame
-# df = pd.read_csv('nama_dataset.csv')
 df = pd.DataFrame(data)
 
-# Pisahkan fitur dan label
 X = df[['kognitif', 'motorik', 'bahasa', 'sosial_emosional']]
 y = df['label']
 
-# Buat model Random Forest
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
-# Simpan model ke file .pkl
 with open('model_rf.pkl', 'wb') as f:
     pickle.dump(model, f)
 

@@ -2,16 +2,256 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AnakSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        $dataAnak = [
+            // Block 1
+            [
+                'nama' => 'Muhammad Afriza A',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '28-10-2019',
+                'nik' => '3204372810190002',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT04/08 Desa Cingcin Kec. Soreang Kab. Bandung 40911',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'M. Eijaz Sayyidul Mubarok',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '13-09-2019',
+                'nik' => '3204371309190001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT01/08 Desa Cingcin Kec. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Habibah Mufassir Al-Qur\'an',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '19-07-2019',
+                'nik' => '3204115907190003',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT04/08 Desa Cingcin Kec. Soreang kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Moch Raffasya Zarkasyi Maulana Al-Fathir',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '15-10-2019',
+                'nik' => '3204371510190004',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT04/08 Desa Cingcin Kec. Soreang kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Nadira Nafisa Nur Aminah',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '01-04-2020',
+                'nik' => '3204374104200002',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT01/08 Desa Cingcin kec. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Wafa Sopiah R',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '14-05-2019',
+                'nik' => '3204375405190003',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang Rt04/08 Desa Cingcin Kec. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Asheeqa Nafisa Azkhadina',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '18-05-2020',
+                'nik' => '3204375805200003',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT03/08 Desa Cingcin Kec. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Naura Shahinaz Yildiz',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '05-04-2020',
+                'nik' => '3204374504200001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 1,
+                'alamat' => 'Kp. Cibolang RT03/08 Desa Cingcin Ke. Soreang Kab. Bandung',
+                'foto' => null,
+            ],
+
+            // Block 2
+            [
+                'nama' => 'Amanda Nacita Putri',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '02-07-2018',
+                'nik' => '3204264207180001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Babakan Cibolang RT01/19 Desa Cingcin Kec. Soreang Kab. Bandung 40914',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Arzan Alfarizi Permana',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '16-07-2018',
+                'nik' => '3204371607180004',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang RT03/08 Desa Cingcin Kec. Soreang Kab. Bandung 40911',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Ashalina Putri Azani',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '14-09-2018',
+                'nik' => '3204375409180001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Ciwaru RT02/16 Desa Sorang Kec. Soreang Kab. Bandung',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'M. Dzikri',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '06-03-2018',
+                'nik' => '3204370603180004',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang Rt03/08 Desa Cingcin Ke. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Qailula Almahyra Muharram',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '06-12-2018',
+                'nik' => '3204374612180002',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Bojong Koneng Rt04/06 Desa Cingcin Kec. Soreang kab. Bandung',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Zidni Subhan Mubarok',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '09-03-2018',
+                'nik' => '3527080903180002',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Burnang Desa Mambulu Barat Kec. Tambelangan kab. Sampang Prov. Jatim',
+                'foto' => null,
+            ],
+
+            // Block 3
+            [
+                'nama' => 'Muhammad Arfan Maulana Setiawan',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '18-07-2018',
+                'nik' => '3204371807180005',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang RT01/08 Desa Cingcin kec. Soreang Kab. Bandung 40921',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Melviano Alvaro Nuryana',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '07-10-2018',
+                'nik' => '3204370710180003',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang RT04/08 Desa Cingcin Kec. Soreang Kab. Bandung 40911',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Meidina Andrea Ramadhani',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '22-05-2018',
+                'nik' => '3204376205180001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang Rt03/08 Desa Cingcin Kec. Soreang Kab. Bandung 40911',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Nadya Aiyssa Azzahra',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '18-10-2018',
+                'nik' => '3204375810180001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang RT03/08 Desa Cingcin Kec. Soreang kab. Bandung',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Shanum Aqeela Zaara',
+                'jk' => 'P',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '02-12-2018',
+                'nik' => '3204374212180001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Lembur Pacung RT01/19 Desa Soreang Kec. Soreang kab. Bandung 40911',
+                'foto' => null,
+            ],
+            [
+                'nama' => 'Yuda Lionel Aldiano',
+                'jk' => 'L',
+                'tempatLhr' => 'Bandung',
+                'tglLahir' => '05-01-2019',
+                'nik' => '3204370501190001',
+                'namaOrtuWali' => '-',
+                'kelas_id' => 2,
+                'alamat' => 'Kp. Cibolang RT03/08 Desa Cingcing Kec. Soreang kab. Bandung',
+                'foto' => null,
+            ],
+        ];
+
+        foreach ($dataAnak as $anak) {
+            DB::table('anaks')->insert([
+                'nama' => $anak['nama'],
+                'jk' => $anak['jk'],
+                'tempatLhr' => $anak['tempatLhr'],
+                'tglLahir' => Carbon::createFromFormat('d-m-Y', $anak['tglLahir'])->toDateString(),
+                'nik' => $anak['nik'],
+                'namaOrtuWali' => $anak['namaOrtuWali'],
+                'kelas_id' => $anak['kelas_id'],
+                'alamat' => $anak['alamat'],
+                'foto' => $anak['foto'],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }

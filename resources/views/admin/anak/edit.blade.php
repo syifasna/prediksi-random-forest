@@ -62,6 +62,16 @@
 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
+                                        <label for="tempatLhr" class="form-label"><strong>Tempat Lahir</strong></label>
+                                        <input disabled type="text" name="tempatLhr"
+                                            class="form-control @error('tempatLhr') is-invalid @enderror" id="tempatLhr"
+                                            value="{{ $anak->tempatLhr }}">
+                                        @error('tempatLhr')
+                                            <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
                                         <label for="tglLahir" class="form-label"><strong>Tanggal Lahir</strong></label>
                                         <input disabled type="date" name="tglLahir"
                                             class="form-control @error('tglLahir') is-invalid @enderror" id="tglLahir"
@@ -70,7 +80,9 @@
                                             <div class="form-text text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                </div>
 
+                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="jk" class="form-label"><strong>Jenis Kelamin</strong></label>
                                         <select name="jk" id="jk"
@@ -87,6 +99,15 @@
                                             <div class="form-text text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="alamat" class="form-label"><strong>Alamat</strong></label>
+                                        <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat"
+                                            style="height:150px" disabled>{{ $anak->alamat }}</textarea>
+                                        @error('alamat')
+                                            <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
 
@@ -97,7 +118,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="namaOrtuWali" class="form-label"><strong>Orang Tua/Wali</strong></label>
+                                        <label for="namaOrtuWali" class="form-label"><strong>Orang
+                                                Tua/Wali</strong></label>
                                         <input disabled type="text" name="namaOrtuWali"
                                             class="form-control @error('namaOrtuWali') is-invalid @enderror"
                                             id="namaOrtuWali" value="{{ $anak->namaOrtuWali }}">

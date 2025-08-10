@@ -16,10 +16,12 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nik');
             $table->enum('jk', ['P','L']);
+            $table->string('tempatLhr');
             $table->date('tglLahir');
             $table->string('namaOrtuWali');
             $table->string('foto')->nullable();
             $table->unsignedBigInteger('kelas_id');
+            $table->text('alamat');
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
             $table->timestamps();
         });

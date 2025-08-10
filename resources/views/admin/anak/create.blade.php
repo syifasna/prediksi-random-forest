@@ -48,7 +48,7 @@
                                         <label for="nik" class="form-label"><strong>NIK</strong></label>
                                         <input type="text" name="nik"
                                             class="form-control @error('nik') is-invalid @enderror" id="nik"
-                                            placeholder="Masukan Tempat Lahir">
+                                            placeholder="Masukan NIK">
                                         @error('nik')
                                             <div class="form-text text-danger">{{ $message }}</div>
                                         @enderror
@@ -57,14 +57,11 @@
 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="jk" class="form-label"><strong>Jenis Kelamin</strong></label>
-                                        <select name="jk" id="jk"
-                                            class="form-control @error('jk') is-invalid @enderror">
-                                            <option value="">-- Pilih Jenis Kelamin --</option>
-                                            <option value="P">Perempuan</option>
-                                            <option value="L">Laki-laki</option>
-                                        </select>
-                                        @error('jk')
+                                        <label for="tempatLhr" class="form-label"><strong>Tempat Lahir</strong></label>
+                                        <input type="text" name="tempatLhr"
+                                            class="form-control @error('tempatLhr') is-invalid @enderror" id="tempatLhr"
+                                            placeholder="Masukan Tempat Lahir">
+                                        @error('tempatLhr')
                                             <div class="form-text text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -79,53 +76,78 @@
                                 </div>
                             </div>
 
-                            <!-- Tab Data Orang Tua / Wali -->
-                            <div class="tab-pane fade" id="data-ortu" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="namaOrtuWali" class="form-label"><strong>Orang Tua/Wali</strong></label>
-                                        <input type="text" name="namaOrtuWali"
-                                            class="form-control @error('namaOrtuWali') is-invalid @enderror"
-                                            id="namaOrtuWali" placeholder="Masukan Sekolah Asal">
-                                        @error('namaOrtuWali')
-                                            <div class="form-text text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Tab Lainnya -->
-                            <div class="tab-pane fade" id="lainnya" role="tabpanel">
-                                <div class="mb-3">
-                                    <label for="foto" class="form-label"><strong>Upload Foto</strong></label>
-                                    <input type="file" name="foto"
-                                        class="form-control @error('foto') is-invalid @enderror" id="foto">
-                                    @error('foto')
-                                        <div class="form-text text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="kelas_id" class="form-label"><strong>Kelas</strong></label>
-                                    <select name="kelas_id" id="kelas_id"
-                                        class="form-control @error('kelas_id') is-invalid @enderror">
-                                        @foreach ($kelas as $row)
-                                            <option value="{{ $row->id }}">{{ $row->nama_kelas }}</option>
-                                        @endforeach
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="jk" class="form-label"><strong>Jenis Kelamin</strong></label>
+                                    <select name="jk" id="jk"
+                                        class="form-control @error('jk') is-invalid @enderror">
+                                        <option value="">-- Pilih Jenis Kelamin --</option>
+                                        <option value="P">Perempuan</option>
+                                        <option value="L">Laki-laki</option>
                                     </select>
-                                    @error('kelas_id')
+                                    @error('jk')
+                                        <div class="form-text text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="alamat" class="form-label"><strong>Alamat</strong></label>
+                                    <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" style="height:150px"
+                                        placeholder="Masukan Alamat"></textarea>
+                                    @error('alamat')
                                         <div class="form-text text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-
                         </div>
-
-                        <button type="submit" class="btn btn-success mt-3">Tambah</button>
-                    </form>
-
                 </div>
+
+                <!-- Tab Data Orang Tua / Wali -->
+                <div class="tab-pane fade" id="data-ortu" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="namaOrtuWali" class="form-label"><strong>Orang Tua/Wali</strong></label>
+                            <input type="text" name="namaOrtuWali"
+                                class="form-control @error('namaOrtuWali') is-invalid @enderror" id="namaOrtuWali"
+                                placeholder="Masukan Nama Orang Tua Wali">
+                            @error('namaOrtuWali')
+                                <div class="form-text text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Lainnya -->
+                <div class="tab-pane fade" id="lainnya" role="tabpanel">
+                    <div class="mb-3">
+                        <label for="foto" class="form-label"><strong>Upload Foto</strong></label>
+                        <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror"
+                            id="foto">
+                        @error('foto')
+                            <div class="form-text text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="kelas_id" class="form-label"><strong>Kelas</strong></label>
+                        <select name="kelas_id" id="kelas_id"
+                            class="form-control @error('kelas_id') is-invalid @enderror">
+                            @foreach ($kelas as $row)
+                                <option value="{{ $row->id }}">{{ $row->nama_kelas }}</option>
+                            @endforeach
+                        </select>
+                        @error('kelas_id')
+                            <div class="form-text text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
             </div>
+
+            <button type="submit" class="btn btn-success mt-3">Tambah</button>
+            </form>
+
         </div>
+    </div>
+    </div>
     </div>
 @endsection

@@ -2,17 +2,61 @@
 
 @section('content')
     <div class="col-12">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card border-success mb-3">
+                    <div class="card-header fw-bold text-success">Sangat Baik</div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>Anak mencapai sebagian besar atau seluruh indikator dengan capaian tertinggi (ditandai
+                                simbol ✔ pada kolom semester I & II, di seluruh aspek utama).</li>
+                            <li>Tercermin dalam konsistensi perkembangan baik dalam aspek nilai agama, motorik, literasi,
+                                emosi, sosial, serta kemandirian.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-primary mb-3">
+                    <div class="card-header fw-bold text-primary">Sesuai Usia</div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>Anak mencapai sebagian besar indikator dengan baik, namun masih memerlukan penguatan di
+                                beberapa aspek.</li>
+                            <li>Biasanya menunjukkan ✔ di sebagian besar indikator, dengan sedikit variasi yang menunjukkan
+                                perkembangan masih berproses.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-warning mb-3">
+                    <div class="card-header fw-bold text-warning">Perlu Pendampingan</div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>Anak belum menunjukkan kemajuan pada beberapa area penting perkembangan.</li>
+                            <li>Ciri khas: banyak indikator kosong atau hanya dicapai sebagian, terutama dalam aspek dasar
+                                seperti emosi, motorik, atau komunikasi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="card carddar mb-4">
             <div class="card-header carddar pb-0 d-flex justify-content-between align-items-center">
                 <h4>Input Perkembangan Anak</h4>
                 <div class="d-md-flex justify-content-md-end">
-                    <a class="btn btn-dark btn-sm" href="{{ route('perkembangan-anak.index') }}">Kembali</a>
+                    <a class="btn btn-dark btn-sm" href="{{ route('perkembangan.index') }}">Kembali</a>
                 </div>
             </div>
+
             <div class="card-body px-0 pt-0 pb-2 mt-3">
                 <div class="container">
 
-                    <form action="{{ route('perkembangan-anak.store') }}" method="POST">
+                    <form action="{{ route('perkembangan.store') }}" method="POST">
                         @csrf
 
                         <div class="row">
@@ -76,7 +120,7 @@
                                 @enderror
                             </div>
                         </div>
-                         <div class="row">
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="motorik" class="form-label"><strong>Nilai Motorik</strong></label>
                                 <input type="number" step="0.01" name="motorik"
@@ -96,14 +140,16 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="sosial_emosional" class="form-label"><strong>Nilai Sosial Emosional</strong></label>
+                                <label for="sosial_emosional" class="form-label"><strong>Nilai Sosial
+                                        Emosional</strong></label>
                                 <input type="number" step="0.01" name="sosial_emosional"
-                                    class="form-control @error('sosial_emosional') is-invalid @enderror" id="sosial_emosional">
+                                    class="form-control @error('sosial_emosional') is-invalid @enderror"
+                                    id="sosial_emosional">
                                 @error('sosial_emosional')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                             <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="ket" class="form-label"><strong>Keterangan (Opsioanl)</strong></label>
                                 <input type="text" step="0.01" name="ket"
                                     class="form-control @error('ket') is-invalid @enderror" id="ket">

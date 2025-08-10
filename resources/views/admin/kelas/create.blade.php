@@ -42,10 +42,17 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12 mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="nama_kelas" class="form-label"><strong>Nama Kelas</strong></label>
                                 <input type="text" step="0.01" name="nama_kelas" class="form-control @error('nama_kelas') is-invalid @enderror" id="nama_kelas">
                                 @error('nama_kelas')
+                                    <div class="form-text text-danger">{{ $message }}</div>
+                                @enderror  
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="ket" class="form-label"><strong>Keterangan</strong></label>
+                                <input type="text" name="ket" class="form-control @error('ket') is-invalid @enderror" id="ket" placeholder="Keterangan">
+                                @error('ket')
                                     <div class="form-text text-danger">{{ $message }}</div>
                                 @enderror  
                             </div>

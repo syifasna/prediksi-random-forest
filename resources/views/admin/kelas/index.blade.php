@@ -34,6 +34,7 @@
                                     <th>Tahun Ajaran</th>
                                     <th>Wali Kelas</th>
                                     <th>Kelas</th>
+                                    <th>Ket</th>
                                     <th width="250px">Action</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                         <td>{{ $kt->TahunAjaran->ket }}</td>
                                         <td>{{ $kt->User->name }}</td>
                                         <td>{{ $kt->nama_kelas }}</td>
+                                        <td>{{ $kt->ket }}</td>
                                         <td>
                                             <form action="{{ route('kelas.destroy', $kt->id) }}" method="POST">
                                                 <a class="btn btn-warning btn-xs"

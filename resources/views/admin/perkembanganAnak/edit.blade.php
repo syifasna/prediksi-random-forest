@@ -42,7 +42,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="kelas_id" class="form-label"><strong>Kelas</strong></label>
-                                <select disabled name="kelas_id" id="kelas_id" class="form-control">
+                                <select name="kelas_id" id="kelas_id" class="form-control">
                                     @foreach ($kelas as $row)
                                         <option value="{{ $row->id }}" {{ $perkembangan->kelas_id == $row->id ? 'selected' : '' }}>
                                             {{ $row->nama_kelas }}

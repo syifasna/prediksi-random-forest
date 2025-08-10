@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('perkembangan_id');
             $table->foreign('perkembangan_id')->references('id')->on('perkembangan_anaks')->onDelete('cascade');
-            $table->enum('hasil_prediksi', ['Sesuai Usia', 'Perlu Pendampingan', 'Dibawah Usia']);
+            $table->enum('hasil_prediksi', ['Sangat Baik', 'Sesuai Usia', 'Perlu Pendampingan']);
             $table->timestamps();
         });
     }
