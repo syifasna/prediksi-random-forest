@@ -31,10 +31,12 @@
     <div class="col-12 d-flex justify-content-between align-items-center mb-3">
         <h2 class="mb-0">Evaluasi Prediksi Perkembangan Anak</h2>
         <div class="d-flex gap-2">
-            <form action="{{ route('evaluasi.prediksi') }}" method="POST" class="mb-0">
-                @csrf
-                <button type="submit" class="btn btn-primary">Jalankan Evaluasi</button>
-            </form>
+            @if (auth()->user()->role == 'admin')
+                <form action="{{ route('evaluasi.prediksi') }}" method="POST" class="mb-0">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Jalankan Evaluasi</button>
+                </form>
+            @endif
 
             <!-- Dropdown Download -->
             <div class="btn-group">

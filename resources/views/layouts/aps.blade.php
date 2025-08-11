@@ -52,10 +52,10 @@
 
         <div class="mt-3 collapse navbar-collapse w-auto" id="sidenav-collapse">
             <ul class="navbar-nav">
-                @if (auth()->user()->role == 'admin')
+                @if (auth()->user()->role == 'user')
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'admin.home' ? 'active' : '' }}"
-                            href="{{ route('admin.home') }}">
+                        <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
+                            href="{{ route('home') }}">
                             <div
                                 class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <ion-icon name="home"></ion-icon>
@@ -63,10 +63,26 @@
                             <span class="nav-link-text ms-1">Dashboard</span>
                         </a>
                     </li>
+                @endif
+                @if (in_array(auth()->user()->role, ['admin', 'kepsek']))
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
+                            href="{{ route('dashboard') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <ion-icon name="home"></ion-icon>
+                            </div>
+                            <span class="nav-link-text ms-1">Dashboard</span>
+                        </a>
+                    </li>
+                @endif
+                @if (auth()->user()->role == 'admin')
                     <li class="nav-item mt-3 mb-0 pb-0">
                         <span class="nav-link-text ms-4 mb-0 pb-0">Random Forest</span>
                     </li>
                     <hr class="horizontal dark mt-0 mb-0 pb-0" />
+                @endif
+                @if (in_array(auth()->user()->role, ['admin', 'kepsek']))
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'perkembangan.index' ? 'active' : '' }}"
                             href="{{ route('perkembangan.index') }}">
@@ -86,30 +102,32 @@
                         </a>
                     </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item mt-4 mb-0 pb-0">
-                    <span class="nav-link-text ms-4 mb-0 pb-0">Data Pengguna</span>
-                </li>
-                <hr class="horizontal dark mt-0 mb-0 pb-0" />
-                <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'user.index' ? 'active' : '' }}"
-                        href="{{ route('user.index') }}">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md text-center bg-white me-2 d-flex align-items-center justify-content-center">
-                            <ion-icon name="cellular-outline"></ion-icon>
-                        </div>
-                        <span class="nav-link-text ms-1">Data Pengguna</span>
-                    </a>
-                    <a class="nav-link {{ Route::currentRouteName() == 'anak.index' ? 'active' : '' }}"
-                        href="{{ route('anak.index') }}">
-                        <div
-                            class="icon icon-shape icon-sm shadow border-radius-md text-center bg-white me-2 d-flex align-items-center justify-content-center">
-                            <ion-icon name="barcode-outline"></ion-icon>
-                        </div>
-                        <span class="nav-link-text ms-1">Data Anak</span>
-                    </a>
-                </li>
-            </ul>
+            @endif
+            @if (auth()->user()->role == 'admin')
+                <ul class="navbar-nav">
+                    <li class="nav-item mt-4 mb-0 pb-0">
+                        <span class="nav-link-text ms-4 mb-0 pb-0">Data Pengguna</span>
+                    </li>
+                    <hr class="horizontal dark mt-0 mb-0 pb-0" />
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'user.index' ? 'active' : '' }}"
+                            href="{{ route('user.index') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md text-center bg-white me-2 d-flex align-items-center justify-content-center">
+                                <ion-icon name="cellular-outline"></ion-icon>
+                            </div>
+                            <span class="nav-link-text ms-1">Data Pengguna</span>
+                        </a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'anak.index' ? 'active' : '' }}"
+                            href="{{ route('anak.index') }}">
+                            <div
+                                class="icon icon-shape icon-sm shadow border-radius-md text-center bg-white me-2 d-flex align-items-center justify-content-center">
+                                <ion-icon name="barcode-outline"></ion-icon>
+                            </div>
+                            <span class="nav-link-text ms-1">Data Anak</span>
+                        </a>
+                    </li>
+                </ul>
         </div>
 
         <div class="collapse navbar-collapse w-auto" id="sidenav-collapse">

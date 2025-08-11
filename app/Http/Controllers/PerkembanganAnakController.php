@@ -46,6 +46,23 @@ class PerkembanganAnakController extends Controller
         $data = $request->all();
         $data['ratarata'] = $ratarata;
 
+        $indikatorData = [
+            'kognitif' => [],
+            'motorik' => [],
+            'bahasa' => [],
+            'sosial_emosional' => [],
+        ];
+
+        foreach ($indikatorData as $ranah => &$list) {
+            $ranahKey = strtolower(str_replace('-', '_', $ranah)); // konsisten underscore
+            for ($i = 0; $i < 4; $i++) {
+                $list[$i] = $request->input("{$ranahKey}_{$i}", null);
+            }
+        }
+
+
+        $data['detail_indikator'] = json_encode($indikatorData);
+
         PerkembanganAnak::create($data);
 
         return redirect()->route('perkembangan.index')
@@ -70,7 +87,8 @@ class PerkembanganAnakController extends Controller
         $semester = Semester::all();
         $kelas = Kelas::all();
         $anak = Anak::all();
-        return view('admin.perkembanganAnak.edit', compact('perkembangan', 'tahunAjaran', 'semester', 'kelas', 'anak'));
+        $detail = json_decode($perkembangan->detail_indikator, true);
+        return view('admin.perkembanganAnak.edit', compact('perkembangan', 'tahunAjaran', 'semester', 'kelas', 'anak', 'detail'));
     }
 
     /**
@@ -78,17 +96,37 @@ class PerkembanganAnakController extends Controller
      */
     public function update(Request $request, PerkembanganAnak $perkembangan): RedirectResponse
     {
-        
+        // Hitung rata-rata
         $ratarata = ($request->kognitif + $request->motorik + $request->bahasa + $request->sosial_emosional) / 4;
 
         $data = $request->all();
         $data['ratarata'] = $ratarata;
-        
-        $perkembangan->update($request->all());
+
+        // Ambil detail indikator (sama seperti store)
+        $indikatorData = [
+            'kognitif' => [],
+            'motorik' => [],
+            'bahasa' => [],
+            'sosial_emosional' => [],
+        ];
+
+        foreach ($indikatorData as $ranah => &$list) {
+            $ranahKey = strtolower(str_replace('-', '_', $ranah)); // konsisten underscore
+            for ($i = 0; $i < 4; $i++) {
+                $list[$i] = $request->input("{$ranahKey}_{$i}", null);
+            }
+        }
+
+
+        $data['detail_indikator'] = json_encode($indikatorData);
+
+        // Update ke database
+        $perkembangan->update($data);
 
         return redirect()->route('perkembangan.index')
             ->with('success', 'Data Perkembangan Anak Berhasil Diubah');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -115,6 +153,19 @@ class PerkembanganAnakController extends Controller
 
     public function getAnak($kelasId)
     {
-        return Anak::where('kelas_id', $kelasId)->get();
+        $tahunAjaranId = request()->get('tahun_ajaran_id');
+        $semesterId = request()->get('semester_id');
+
+        // Ambil anak yang belum diinput pada perkembangan untuk tahun & semester ini
+        $anak = Anak::where('kelas_id', $kelasId)
+            ->whereNotIn('id', function ($query) use ($tahunAjaranId, $semesterId) {
+                $query->select('anak_id')
+                    ->from('perkembangan_anaks')
+                    ->where('tahun_ajaran_id', $tahunAjaranId)
+                    ->where('semester_id', $semesterId);
+            })
+            ->get();
+
+        return response()->json($anak);
     }
 }

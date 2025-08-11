@@ -22,17 +22,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
-Route::middleware(['auth', 'user-access:admin'])->group(function () {
-
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
-    Route::resource('/admin/user', UserController::class);
-    Route::resource('/admin/tahun-ajaran', TahunAjaranController::class);
-    Route::resource('/admin/semester', SemesterController::class);
-    Route::resource('admin/kelas', KelasController::class)->parameters([
-        'kelas' => 'kelas'
-    ]);
-    Route::resource('/admin/anak', AnakController::class);
-    Route::resource('/admin/perkembangan', PerkembanganAnakController::class);
+Route::middleware(['auth', 'user-access:admin,kepsek'])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::resource('/perkembangan', PerkembanganAnakController::class);
     //get
     Route::get('/get-semester/{tahunAjaranId}', [PerkembanganAnakController::class, 'getSemester']);
     Route::get('/get-kelas/{tahunAjaranId}', [PerkembanganAnakController::class, 'getKelas']);
@@ -44,7 +36,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/evaluasi/download-pdf', [EvaluasiController::class, 'downloadPDFGrouped'])->name('evaluasi.download.pdf');
 });
 
-Route::middleware(['auth', 'user-access:kepsek'])->group(function () {
-
-    Route::get('/kepsek/home', [HomeController::class, 'kepsekHome'])->name('kepsek.home');
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    Route::resource('/user', UserController::class);
+    Route::resource('/tahun-ajaran', TahunAjaranController::class);
+    Route::resource('/semester', SemesterController::class);
+    Route::resource('/kelas', KelasController::class)->parameters([
+        'kelas' => 'kelas'
+    ]);
+    Route::resource('/anak', AnakController::class);
 });

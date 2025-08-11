@@ -13,15 +13,14 @@ class UserAccess
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $userRole): Response
+    public function handle(Request $request, Closure $next, ...$userRoles): Response
     {
-        if(auth()->user()->role == $userRole){
+        if (in_array(auth()->user()->role, $userRoles)) {
             return $next($request);
         }
-         
-       return response()->view('error', [
+
+        return response()->view('error', [
             'message' => 'Kamu tidak memiliki akses untuk halaman ini.'
         ], 403);
-        //return response()->json(['Kamu tidak memiliki akses untuk halaman ini.']);
     }
 }

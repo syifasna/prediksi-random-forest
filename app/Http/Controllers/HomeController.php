@@ -28,10 +28,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $evaluasi = Evaluasi::with([
+            'perkembangan.anak',
+            'perkembangan.kelas'
+        ])->get()->map(function ($item) {
+            return [
+                'nama_anak'      => $item->perkembangan->anak->nama ?? '-',
+                'nama_kelas'     => $item->perkembangan->kelas->nama_kelas ?? '-',
+                'hasil_prediksi' => $item->hasil_prediksi ?? '-',
+            ];
+        });
+        $berdasarkanLabel = $evaluasi->groupBy('hasil_prediksi');
+
+        return view('home', compact('berdasarkanLabel'));
     }
 
-    public function adminHome(): View
+    public function dashboard(): View
     {
         $totalAnak = Anak::count();
         $totalKelas = Kelas::count();
@@ -88,7 +100,7 @@ class HomeController extends Controller
         }
 
         // Kirim semua data ke view
-        return view('adminHome', [
+        return view('dashboard', [
             'totalAnak' => $totalAnak,
             'totalKelas' => $totalKelas,
             'kelasLabels' => array_values($kelasList),
